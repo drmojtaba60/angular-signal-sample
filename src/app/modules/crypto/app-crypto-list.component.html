@@ -1,0 +1,29 @@
+
+<app-search />
+
+
+<table class="crypto-table">
+  <thead>
+  <tr>
+    <th (click)="store.sortData('rank')" width="75px">رتبه</th>
+    <th (click)="store.sortData('symbol')" width="85px">نماد</th>
+    <th (click)="store.sortData('name')" width="205px">نام</th>
+    <th (click)="store.sortData('priceUsd')" width="85px">قیمت</th>
+    <th (click)="store.sortData('changePercent24Hr')" width="95px">تغییر 24 ساعت</th>
+  </tr>
+  </thead>
+  <tbody>
+    @for (asset of store.getPaginatedData(); track asset.id) {
+      <tr>
+        <td>{{ asset.rank }}</td>
+        <td>{{ asset.symbol }}</td>
+        <td>{{ asset.name }}</td>
+        <td>{{ asset.priceUsd }}</td>
+        <td>{{ asset.changePercent24Hr }}</td>
+      </tr>
+    }
+  </tbody>
+</table>
+
+<button (click)="store.previousPage()" [disabled]="store.currentPage() === 1">قبلی</button>
+<button (click)="store.nextPage()" [disabled]="store.currentPage()>=store.countPages()">بعدی</button>

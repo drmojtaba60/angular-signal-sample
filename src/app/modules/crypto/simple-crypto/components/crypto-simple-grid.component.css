@@ -1,0 +1,26 @@
+.grid {
+  margin: 15px 7px;
+  padding: 7px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  border: 0;
+  border-spacing: 0;
+  border-radius: 15px;
+  background-color: #efefef;
+}
+thead th {
+  font-weight: bold;
+  text-align: center;
+  padding: 16px 8px;
+  border-bottom: 1px solid #ddd;
+}
+tbody td {
+  text-align: center;
+  padding: 16px 8px;
+}

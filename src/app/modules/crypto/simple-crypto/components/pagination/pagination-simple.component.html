@@ -1,0 +1,7 @@
+  <ul >
+    @for (page of pages(); track $index) {
+      <li>
+        <a href="#" (click)="changePageHandler($event, page)">{{ page }}</a>
+      </li>
+    }
+  </ul>

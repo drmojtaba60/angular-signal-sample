@@ -1,0 +1,24 @@
+<div class="grid">
+  <table>
+    <thead>
+    <tr>
+      @for (header of headers(); track header.title) {
+        <th [style.width]="header.width" [style.text-align]="'center'">{{ header.title }}</th>
+      }
+    </tr>
+    </thead>
+    <tbody>
+      @for (asset of rows(); track asset.id) {
+        <tr>
+          <td [style.width]="width('rank')" [style.text-align]="'center'">{{ asset.rank }}</td>
+          <td [style.width]="width('symbol')" [style.text-align]="'center'">{{ asset.symbol }}</td>
+          <td [style.width]="width('name')" [style.text-align]="'center'">{{ asset.name }}</td>
+          <td [style.width]="width('priceUsd')" [style.text-align]="'center'">{{ asset.priceUsd }}</td>
+          <td [style.width]="width('changePercent24Hr')"
+              [style.text-align]="'center'">{{ asset.changePercent24Hr || '' }}
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

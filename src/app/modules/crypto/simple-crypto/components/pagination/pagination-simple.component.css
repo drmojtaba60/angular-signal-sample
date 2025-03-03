@@ -1,0 +1,21 @@
+
+.active {
+  font-weight: bold;
+}
+ul,li {
+  list-style: none;
+}
+ul {
+  display: flex;
+  flex-direction: row;
+  gap: .75rem;
+  li{
+
+    a {
+      text-decoration: none;
+      border: 1px solid #999;
+      border-radius: 12px;
+      padding: 2px 20px;
+    }
+  }
+}
