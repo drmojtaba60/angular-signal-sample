@@ -1,7 +1,7 @@
 import {computed, effect, Injectable, signal, WritableSignal} from '@angular/core';
-import CryptoModel from '../models/crypto.model';
 import {CryptoApiService} from './crypto.service';
 import {single} from 'rxjs';
+import CryptoModel from "../models/sortModel";
 
 @Injectable({
   providedIn: 'root',

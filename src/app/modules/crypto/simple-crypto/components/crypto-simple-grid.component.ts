@@ -1,9 +1,13 @@
 
 import {Component, computed, input, InputSignal} from '@angular/core';
-import CryptoModel from '../../models/crypto.model';
+
+import CryptoModel from '../../models/sortModel';
+import { SortListGridComponent} from './sort/sort-list.component';
+import SortModel from '../../models/sortModel';
 
 @Component({
   imports: [
+    SortListGridComponent
   ],
   selector: 'app-crypto-simple-grid',
   templateUrl:'crypto-simple-grid.component.html',
@@ -17,4 +21,8 @@ export class CryptoSimpleGridComponent
    {
      return this.headers()?.find(q=>q.title===name)?.width;
    }
+
+  sortChangeEventHandler($event: SortModel) {
+
+  }
 }

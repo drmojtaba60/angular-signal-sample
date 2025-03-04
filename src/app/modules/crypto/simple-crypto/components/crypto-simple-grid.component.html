@@ -3,7 +3,12 @@
     <thead>
     <tr>
       @for (header of headers(); track header.title) {
-        <th [style.width]="header.width" [style.text-align]="'center'">{{ header.title }}</th>
+        <th [style.width]="header.width" >
+          <app-sort-list
+            [fieldName]="header.title"
+            (sortChangeEvent)="sortChangeEventHandler($event)"
+          ></app-sort-list>
+        </th>
       }
     </tr>
     </thead>

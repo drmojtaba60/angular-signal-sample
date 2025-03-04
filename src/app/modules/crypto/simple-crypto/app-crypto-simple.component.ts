@@ -1,10 +1,10 @@
 import {Component, computed, OnInit, Signal, signal} from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import CryptoModel from '../models/crypto.model';
 import {CryptoApiService} from '../services/crypto.service';
 import {CryptoSimpleGridComponent} from './components/crypto-simple-grid.component';
 import {PaginationSimpleComponent} from './components/pagination/pagination-simple.component';
 import {SearchSimpleComponent} from './components/search/search-simple.component';
+import CryptoModel from '../models/sortModel';
 
 @Component({
   imports: [
