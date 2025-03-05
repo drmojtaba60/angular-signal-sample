@@ -2,13 +2,8 @@ import {Component, output} from '@angular/core';
 
 @Component({
   selector: 'app-search-simple',
-  template: `
-    <input
-      type="text"
-      placeholder="Search by name..."
-      (input)="onSearch($event)"
-    />
-  `,
+  templateUrl:'search-simple.component.html',
+  styleUrls:['search-simple.component.css']
 })
 export class SearchSimpleComponent {
   constructor() {}

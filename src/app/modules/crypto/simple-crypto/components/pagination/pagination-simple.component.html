@@ -1,7 +1,10 @@
   <ul >
     @for (page of pages(); track $index) {
       <li>
-        <a href="#" (click)="changePageHandler($event, page)">{{ page }}</a>
+        <a href="#"
+           (click)="changePageHandler($event, page)"
+           [class]="{active:currentPage()==page}"
+        >{{ page }}</a>
       </li>
     }
   </ul>

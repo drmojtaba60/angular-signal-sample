@@ -1,6 +1,8 @@
 
 .active {
   font-weight: bold;
+  background-color: #369;
+  color: #fff;
 }
 ul,li {
   list-style: none;
@@ -10,12 +12,11 @@ ul {
   flex-direction: row;
   gap: .75rem;
   li{
-
     a {
       text-decoration: none;
       border: 1px solid #999;
-      border-radius: 12px;
-      padding: 2px 20px;
+      border-radius: 50%;
+      padding:7px 10px;
     }
   }
 }

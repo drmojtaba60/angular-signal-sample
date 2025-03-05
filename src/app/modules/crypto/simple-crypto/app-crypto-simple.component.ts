@@ -1,10 +1,10 @@
 import {Component, computed, OnInit, Signal, signal} from '@angular/core';
 import {FormsModule} from '@angular/forms';
+import CryptoModel from '../models/crypto.model';
 import {CryptoApiService} from '../services/crypto.service';
 import {CryptoSimpleGridComponent} from './components/crypto-simple-grid.component';
 import {PaginationSimpleComponent} from './components/pagination/pagination-simple.component';
 import {SearchSimpleComponent} from './components/search/search-simple.component';
-import CryptoModel from '../models/sortModel';
 
 @Component({
   imports: [
@@ -59,7 +59,15 @@ export class AppCryptoSimpleComponent implements OnInit {
     this.crypto.update(value => ({...value, pageIndex: ($event - 1) * this.crypto().pageSize,}));
   }
   queryNameChangeEvent($event: string) {
-    console.log('queryNameChangeEvent', $event);
-    this.crypto.update(value => ({...value,filteredData: this.crypto().data.filter(q=>(q as any).name.toLowerCase().includes($event.toLowerCase()) ) }));
+    this.crypto.update(value => ({...value,pageIndex: 0,filteredData: this.crypto().data.filter(q=>(q as any).name.toLowerCase().includes($event.toLowerCase()) ) }));
+  }
+
+  sortChangeEvent($event :{name: string, direction: string}) {
+    const sortResult=this.crypto().filteredData.sort((a:any, b:any) => {
+      return a[$event.name]>b[$event.name]
+        ? ( $event.direction==='asc' ? 1 : -1 )
+        : a[$event.name]===b[$event.name] ? 0 : ( $event.direction==='asc' ? -1 : 1 );
+    });
+    this.crypto.update(value => ({...value,pageIndex: 0,filteredData: sortResult,}));
   }
 }

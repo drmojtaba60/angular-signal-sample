@@ -8,6 +8,7 @@ export class PaginationSimpleComponent {
   totalPages : InputSignal<number> = input(0);
   pageSize =input(10);
   changePage =output<number>();
+  currentPage =signal(1);
   // محاسبه تعداد صفحات
   pages = computed(() => {
     const totals = Math.ceil(
@@ -17,6 +18,7 @@ export class PaginationSimpleComponent {
   });
   changePageHandler = (ev:Event, page: number) => {
     ev.preventDefault();
+    this.currentPage.set(page);
     this.changePage.emit(page);
   }
 }

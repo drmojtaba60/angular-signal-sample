@@ -1,12 +1,13 @@
 <app-search-simple (queryNameChange)="queryNameChangeEvent($event)"/>
-<app-crypto-simple-grid [rows]="list()" [headers]="crypto().headers"></app-crypto-simple-grid>
+<app-crypto-simple-grid [rows]="list()" [headers]="crypto().headers"
+                        (sortChange)="sortChangeEvent($event)"></app-crypto-simple-grid>
 <app-pagination-simple
-    [totalPages]="crypto().filteredData.length"
-    [pageSize]="this.crypto().pageSize"
-    (changePage)="changePageEvent($event)"
+  [totalPages]="crypto().filteredData.length"
+  [pageSize]="this.crypto().pageSize"
+  (changePage)="changePageEvent($event)"
 ></app-pagination-simple>
 
 <div>
-  تعداد کل :  {{crypto().filteredData.length}}
+  تعداد کل :  {{ crypto().filteredData.length }}
 </div>
 
